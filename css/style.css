@@ -499,6 +499,118 @@ button:focus-visible {
 
 
 /* ===================================================
+   POSTERS
+   =================================================== */
+
+.posters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.poster-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.poster-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.poster-thumb {
+    display: block;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    position: relative;
+}
+
+.poster-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform var(--transition-base);
+}
+
+.poster-card:hover .poster-thumb img {
+    transform: scale(1.03);
+}
+
+.poster-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-bg-alt) 100%);
+}
+
+.poster-pdf-preview {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    pointer-events: none;
+    background-color: var(--color-bg-alt);
+}
+
+.poster-body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+}
+
+.poster-body h3 {
+    font-size: var(--font-size-lg);
+    line-height: 1.35;
+}
+
+.poster-body h3 a {
+    color: var(--color-text);
+}
+
+.poster-body h3 a:hover {
+    color: var(--color-accent);
+}
+
+.poster-meta {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.poster-project-link {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: auto;
+    padding-top: var(--space-sm);
+}
+
+.poster-project-link svg {
+    transition: transform var(--transition-fast);
+}
+
+.poster-project-link:hover svg {
+    transform: translateX(3px);
+}
+
+
+/* ===================================================
    PROJECTS
    =================================================== */
 
